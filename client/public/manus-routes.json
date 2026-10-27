@@ -1,0 +1,1 @@
+{"routes":[{"path":"/","title":"لوحة التحكم"},{"path":"/live","title":"البث المباشر"},{"path":"/content","title":"إدارة المحتوى"},{"path":"/users","title":"المستخدمون والاشتراكات"},{"path":"/notifications","title":"الإشعارات"},{"path":"/support","title":"الدعم الفني"},{"path":"/settings","title":"إعدادات النظام"},{"path":"/404","title":"غير موجود"}]}

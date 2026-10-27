@@ -3,35 +3,42 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
+import AlmoghaniLayout from "./components/AlmoghaniLayout";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
+import {
+  ContentManagement,
+  DashboardOverview,
+  LivePage,
+  NotificationsPage,
+  SupportPage,
+  SystemSettings,
+  UsersSubscriptions,
+} from "./pages/ControlPages";
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <AlmoghaniLayout>
+      <Switch>
+        <Route path="/" component={DashboardOverview} />
+        <Route path="/live" component={LivePage} />
+        <Route path="/content" component={ContentManagement} />
+        <Route path="/users" component={UsersSubscriptions} />
+        <Route path="/notifications" component={NotificationsPage} />
+        <Route path="/support" component={SupportPage} />
+        <Route path="/settings" component={SystemSettings} />
+        <Route path="/404" component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
+    </AlmoghaniLayout>
   );
 }
-
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
-          <Toaster />
+          <Toaster position="top-center" richColors />
           <Router />
         </TooltipProvider>
       </ThemeProvider>

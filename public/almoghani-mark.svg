@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="g" x1="70" y1="50" x2="430" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C94CFF"/><stop offset=".48" stop-color="#7C4DFF"/><stop offset="1" stop-color="#18D8FF"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="13" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="#071326"/>
+  <circle cx="256" cy="256" r="170" fill="#0C2240" stroke="url(#g)" stroke-width="8" opacity=".96"/>
+  <g filter="url(#glow)">
+    <rect x="136" y="165" width="240" height="162" rx="40" stroke="url(#g)" stroke-width="18"/>
+    <path d="M194 165 164 126M318 165l30-39" stroke="#18D8FF" stroke-width="13" stroke-linecap="round"/>
+    <path d="m239 215 70 38-70 38v-76Z" fill="url(#g)"/>
+    <circle cx="384" cy="351" r="31" fill="#1EE6A5" stroke="#071326" stroke-width="10"/>
+  </g>
+  <text x="256" y="405" fill="#EEF5FF" font-family="Arial, sans-serif" font-size="34" font-weight="800" text-anchor="middle" letter-spacing="4">ALMOGHANI</text>
+</svg>
